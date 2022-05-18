@@ -25,6 +25,25 @@
             <textarea name="companyDescription" class="" id="companyDescription" cols="30" rows="6" placeholder="Company Description"></textarea>
             <span class="error-text" id="error_companyDescription"></span>
 
+            <h3> Which of following words would you use to describe your product or service? </h3>
+            <div class="checkboxDiv" id="checkboxDiv">
+                <div class="checkbox-div" id="quality">
+                    <input type="checkbox" id="qualityInput" name="choise1">
+                    <label for="checkAgree">High Quality</label>
+                </div>
+
+                <div class="checkbox-div" id="realiable">
+                    <input type="checkbox" id="realiableInput" name="choise2">
+                    <label for="choise">Reliable</label>
+                </div>
+
+                <div class="checkbox-div" id="unique">
+                    <input type="checkbox" id="uniqueInput" name="choise3">
+                    <label for="choise">Unique</label>
+                    <span class="error-text" id="error_quality"></span>
+                </div>
+            </div>
+            
             <label>Which of following social media is most popular communicate way for you?</label>
             <div class="radio-div">
                 <input type="radio" id="media1" name="social" >
@@ -39,8 +58,6 @@
                 <label for="media3">Twitter</label>
                 <span class="error-text" id="error_social"></span>
             </div>
-            
-
             <div class="email-div">
                 <label for="email"> Enter your email:</label>
                 <input type="email" id="email" name="email" placeholder="Your Email" onkeydown="validation()">
@@ -58,23 +75,8 @@
                 <input type="password" name="password1" id="password1" placeholder="Your Password">
                 <span class="error-text" id="error_password1"></span>
             </div>
-
             <!-- <label style="font-size:15px; margin-top: 15px;">Agree our terms and conditions</label> -->
-            <div class="checkbox-div" >
-                <input type="checkbox" id="checkAgree" name="checkAgree" >
-                <label for="checkAgree">I agree your terms and conditions</label>
-                <span class="error-text" id="error_checkAgree"></span>
-            </div>
-            <!-- <div class="checkbox-div">
-                <input type="checkbox" id="choise" name="choise2">
-                <label for="choise">Reliable</label>
-            </div>
-
-            <div class="checkbox-div">
-                <input type="checkbox" id="choise" name="choise3">
-                <label for="choise">Unique</label>
-            </div> -->
-
+            
 
             <div class="saveButtons" class="" >
                 <Button class="saveButton" id="">Send</Button>

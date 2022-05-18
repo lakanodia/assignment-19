@@ -27,10 +27,21 @@ document.getElementById('mainForm').addEventListener('submit', function(event) {
 
     //  ვალიდაცია ჩექბოქსზე
 
-    let checkAgree = document.getElementById('checkAgree').checked;
-    if(!checkAgree){
-        errors.checkAgree = 'You must agree our terms and conditions';
+    // let checkAgree = document.getElementById('checkAgree').checked;
+    // if(!checkAgree){
+    //     errors.checkAgree = 'You must agree our terms and conditions';
+    // }
+    let error = false;
+    let checkBoxDiv = document.getElementById('checkboxDiv');
+    checkBoxDiv.querySelectorAll('input[type="checkbox"]').forEach(element => {
+        if(element.checked){
+            error =true;
+        }
+    });
+    if (error == false) {
+        errors.quality = 'Please select'        
     }
+
 
     //  ვალიდაცია რედიოზე
     
@@ -44,7 +55,7 @@ document.getElementById('mainForm').addEventListener('submit', function(event) {
         if(socialMedia == false){
             errors.social = 'Please select'
         }
-
+        
 
     //  ვალიდაცია პაროლებზე
 
@@ -54,12 +65,7 @@ document.getElementById('mainForm').addEventListener('submit', function(event) {
 
     let password = document.querySelector('[name="password"]').value;
     let password1 = document.querySelector('[name="password1"]').value;
-    // if (password!==password1){
-    //     errors.password1 = 'Your Password do not match';
-    // }
-    // if(password==''){
-    //     errors.password = 'Password can not be empty';
-    // }
+
     if (password!=='' && password!==password1){
         errors.password1 = 'Your Password do not match';
         errors.password = 'Your Password do not match';
@@ -81,7 +87,6 @@ document.getElementById('mainForm').addEventListener('submit', function(event) {
     }
 });
 
-
 // ვალიდაცია პაროლებზე
 let passwordShow = document.getElementById('password');
 let toggleIcon = document.getElementById('toggleIcon');
@@ -95,16 +100,7 @@ function showHidePassword() {
         toggleIcon.classList.remove('fa-eye-slash');
     }   
 }
-// showHidePassword = () => {
-//     if(passwordShow.type == "password"){
-//         passwordShow.setAttribute('type', 'text');
-//         toggleIcon.classList.add('fa-eye-slash');
-//     }else{
-//         passwordShow.setAttribute('type', 'password');
-//         toggleIcon.classList.remove('fa-eye-slash');
-//     }
 
-// }
 toggleIcon.addEventListener('click', showHidePassword);
 
 // იმეილის  მეორე ვალიდაცია
