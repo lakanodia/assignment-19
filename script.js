@@ -25,12 +25,8 @@ document.getElementById('mainForm').addEventListener('submit', function(event) {
         errors.email = 'Email can not be empty';
     }
 
-    //  ვალიდაცია ჩექბოქსზე
+    //  ვალიდაცია ჩექბოქსებზე
 
-    // let checkAgree = document.getElementById('checkAgree').checked;
-    // if(!checkAgree){
-    //     errors.checkAgree = 'You must agree our terms and conditions';
-    // }
     let error = false;
     let checkBoxDiv = document.getElementById('checkboxDiv');
     checkBoxDiv.querySelectorAll('input[type="checkbox"]').forEach(element => {
@@ -41,7 +37,6 @@ document.getElementById('mainForm').addEventListener('submit', function(event) {
     if (error == false) {
         errors.quality = 'Please select'        
     }
-
 
     //  ვალიდაცია რედიოზე
     
@@ -56,7 +51,6 @@ document.getElementById('mainForm').addEventListener('submit', function(event) {
             errors.social = 'Please select'
         }
         
-
     //  ვალიდაცია პაროლებზე
 
     form.querySelectorAll('.error-text').forEach(item => {
