@@ -54,14 +54,20 @@ document.getElementById('mainForm').addEventListener('submit', function(event) {
 
     let password = document.querySelector('[name="password"]').value;
     let password1 = document.querySelector('[name="password1"]').value;
-    if (password!==password1){
+    // if (password!==password1){
+    //     errors.password1 = 'Your Password do not match';
+    // }
+    // if(password==''){
+    //     errors.password = 'Password can not be empty';
+    // }
+    if (password!=='' && password!==password1){
         errors.password1 = 'Your Password do not match';
         errors.password = 'Your Password do not match';
-    }else{
-        errors.password = 'Password can not be empty';
-        errors.password1 = 'Password can not be empty';
     }
-  
+    if(password==''){
+        errors.password1 = 'Password can not be empty';
+        errors.password = 'Password can not be empty';
+}
     for(let item in errors){
         let errorSpan = document.getElementById('error_' + item);
         if (errorSpan) {
@@ -89,16 +95,16 @@ function showHidePassword() {
         toggleIcon.classList.remove('fa-eye-slash');
     }   
 }
-showHidePassword = () => {
-    if(passwordShow.type == "password"){
-        passwordShow.setAttribute('type', 'text');
-        toggleIcon.classList.add('fa-eye-slash');
-    }else{
-        passwordShow.setAttribute('type', 'password');
-        toggleIcon.classList.remove('fa-eye-slash');
-    }
+// showHidePassword = () => {
+//     if(passwordShow.type == "password"){
+//         passwordShow.setAttribute('type', 'text');
+//         toggleIcon.classList.add('fa-eye-slash');
+//     }else{
+//         passwordShow.setAttribute('type', 'password');
+//         toggleIcon.classList.remove('fa-eye-slash');
+//     }
 
-}
+// }
 toggleIcon.addEventListener('click', showHidePassword);
 
 // იმეილის  მეორე ვალიდაცია
@@ -116,11 +122,3 @@ function validation() {
         spanText.style.color = 'red';
     }
 }
-
-
-
-
-
-
-
-
