@@ -25,7 +25,7 @@ document.getElementById('mainForm').addEventListener('submit', function(event) {
         errors.email = 'Email can not be empty';
     }
 
-    //  ვალიდაცია ჩექბოქსებზე
+    //  ვალიდაცია ჩექბოქსზე
 
     let error = false;
     let checkBoxDiv = document.getElementById('checkboxDiv');
@@ -51,6 +51,7 @@ document.getElementById('mainForm').addEventListener('submit', function(event) {
             errors.social = 'Please select'
         }
         
+
     //  ვალიდაცია პაროლებზე
 
     form.querySelectorAll('.error-text').forEach(item => {
